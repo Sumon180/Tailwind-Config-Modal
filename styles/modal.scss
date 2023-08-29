@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .card {
+    font-size: x-large;
+    background-color: aqua;
+  }
+}
+
+// you can overright from xml file
+@layer components {
+  .btn {
+    @apply text-white px-4 py-2 rounded-md transform hover:scale-110 duration-200;
+  }
+  .modal-1 {
+    @apply bg-blue-500;
+  }
+  .modal-2 {
+    @apply bg-green-500;
+  }
+}
+
+// you can not overright from xml
+.modal {
+  @apply fixed inset-0 flex items-center justify-center z-50;
+  div:first-child {
+    @apply fixed inset-0 bg-black opacity-50;
+  }
+  .modal-box {
+    @apply bg-white text-black rounded-lg p-6 w-96 z-10;
+  }
+}
+.close-button {
+  @apply bg-blue-500 text-white px-4 py-2 rounded-md;
+}
+
+// default & you can overright from xml file
+@layer base {
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+}
